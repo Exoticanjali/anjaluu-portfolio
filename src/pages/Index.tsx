@@ -1,17 +1,13 @@
-
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LocomotiveScroll from 'locomotive-scroll';
 import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
-
 gsap.registerPlugin(ScrollTrigger);
-
 const Index = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const preloaderRef = useRef<HTMLDivElement>(null);
-
   useEffect(() => {
     // Initialize Locomotive Scroll
     const scroll = new LocomotiveScroll({
@@ -23,13 +19,11 @@ const Index = () => {
 
     // Loading Animation
     const tl = gsap.timeline();
-    
     tl.to(progressBarRef.current, {
       width: "100%",
       duration: 2.5,
-      ease: "power2.out",
-    })
-    .to(preloaderRef.current, {
+      ease: "power2.out"
+    }).to(preloaderRef.current, {
       opacity: 0,
       scale: 0.9,
       duration: 1,
@@ -42,7 +36,6 @@ const Index = () => {
         initMainAnimations();
       }
     });
-
     const initMainAnimations = () => {
       // Hero animations
       gsap.fromTo(".hero-title", {
@@ -56,7 +49,6 @@ const Index = () => {
         duration: 1.5,
         ease: "power2.out"
       });
-
       gsap.fromTo(".hero-subtitle", {
         opacity: 0,
         y: 30
@@ -67,7 +59,6 @@ const Index = () => {
         delay: 0.5,
         ease: "power2.out"
       });
-
       gsap.fromTo(".hero-cta", {
         opacity: 0,
         scale: 0.8
@@ -78,7 +69,6 @@ const Index = () => {
         delay: 1,
         ease: "back.out(1.7)"
       });
-
       gsap.fromTo(".spline-container", {
         opacity: 0,
         x: 100
@@ -116,7 +106,6 @@ const Index = () => {
           end: "bottom 20%"
         }
       });
-
       gsap.fromTo(".about-content", {
         opacity: 0,
         x: 50
@@ -131,7 +120,6 @@ const Index = () => {
           end: "bottom 20%"
         }
       });
-
       gsap.fromTo(".skill-icon", {
         opacity: 0,
         y: 30,
@@ -147,7 +135,6 @@ const Index = () => {
           start: "top 85%"
         }
       });
-
       gsap.fromTo(".project-card", {
         opacity: 0,
         y: 50,
@@ -163,7 +150,6 @@ const Index = () => {
           start: "top 80%"
         }
       });
-
       gsap.fromTo(".contact-form", {
         opacity: 0,
         x: -50
@@ -176,7 +162,6 @@ const Index = () => {
           start: "top 80%"
         }
       });
-
       gsap.fromTo(".contact-info", {
         opacity: 0,
         x: 50
@@ -191,54 +176,43 @@ const Index = () => {
         }
       });
     };
-
     return () => {
       scroll.destroy();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
-
-  const projects = [
-    {
-      title: "AI Data Visualization",
-      description: "Interactive dashboard for machine learning model insights",
-      tech: ["React", "D3.js", "Python"],
-      image: "/lovable-uploads/89542fba-6a99-4e31-b896-1f221476d1e1.png"
-    },
-    {
-      title: "3D Portfolio Platform",
-      description: "Immersive 3D portfolio builder with WebGL",
-      tech: ["Three.js", "React", "GSAP"],
-      image: "/lovable-uploads/915a1070-2760-467c-90dc-21d9daf04f6c.png"
-    },
-    {
-      title: "Gaming UI Framework",
-      description: "Next-gen gaming interface components",
-      tech: ["React", "TypeScript", "CSS3"],
-      image: "/lovable-uploads/d72d1fcb-0c06-4e34-a6c9-10e8b7d824ea.png"
-    },
-    {
-      title: "Responsive Design System",
-      description: "Cross-platform design components",
-      tech: ["HTML5", "CSS3", "JavaScript"],
-      image: "/lovable-uploads/0ffd39c5-bf1e-4899-aed7-8e7362be659b.png"
-    },
-    {
-      title: "Creative Gaming Portal",
-      description: "Immersive gaming experience platform",
-      tech: ["React", "WebGL", "Node.js"],
-      image: "/lovable-uploads/55a7056b-c0a6-4f80-b157-f0e3313e04c1.png"
-    },
-    {
-      title: "Professional Builder",
-      description: "Advanced website building platform",
-      tech: ["React", "TypeScript", "SASS"],
-      image: "/lovable-uploads/4bc0ed8a-dfdb-4afd-a2da-a323e865c883.png"
-    }
-  ];
-
-  return (
-    <div ref={scrollRef} data-scroll-container className="overflow-hidden">
+  const projects = [{
+    title: "AI Data Visualization",
+    description: "Interactive dashboard for machine learning model insights",
+    tech: ["React", "D3.js", "Python"],
+    image: "/lovable-uploads/89542fba-6a99-4e31-b896-1f221476d1e1.png"
+  }, {
+    title: "3D Portfolio Platform",
+    description: "Immersive 3D portfolio builder with WebGL",
+    tech: ["Three.js", "React", "GSAP"],
+    image: "/lovable-uploads/915a1070-2760-467c-90dc-21d9daf04f6c.png"
+  }, {
+    title: "Gaming UI Framework",
+    description: "Next-gen gaming interface components",
+    tech: ["React", "TypeScript", "CSS3"],
+    image: "/lovable-uploads/d72d1fcb-0c06-4e34-a6c9-10e8b7d824ea.png"
+  }, {
+    title: "Responsive Design System",
+    description: "Cross-platform design components",
+    tech: ["HTML5", "CSS3", "JavaScript"],
+    image: "/lovable-uploads/0ffd39c5-bf1e-4899-aed7-8e7362be659b.png"
+  }, {
+    title: "Creative Gaming Portal",
+    description: "Immersive gaming experience platform",
+    tech: ["React", "WebGL", "Node.js"],
+    image: "/lovable-uploads/55a7056b-c0a6-4f80-b157-f0e3313e04c1.png"
+  }, {
+    title: "Professional Builder",
+    description: "Advanced website building platform",
+    tech: ["React", "TypeScript", "SASS"],
+    image: "/lovable-uploads/4bc0ed8a-dfdb-4afd-a2da-a323e865c883.png"
+  }];
+  return <div ref={scrollRef} data-scroll-container className="overflow-hidden">
       {/* Preloader */}
       <div ref={preloaderRef} className="fixed inset-0 z-50 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex flex-col items-center justify-center">
         <div className="text-4xl font-light text-white mb-8 tracking-wider">ANJALI</div>
@@ -272,22 +246,14 @@ const Index = () => {
       {/* Hero Section */}
       <section id="home" className="min-h-screen relative flex items-center justify-center bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         <div className="absolute inset-0 spline-container">
-          <iframe 
-            src='https://my.spline.design/aidatamodelinteraction-CqfWtjRnzmGkqhdW6AdsL2I1/' 
-            frameBorder='0' 
-            width='100%' 
-            height='100%'
-            className="opacity-60"
-          />
+          <iframe src='https://my.spline.design/aidatamodelinteraction-CqfWtjRnzmGkqhdW6AdsL2I1/' frameBorder='0' width='100%' height='100%' className="opacity-60" />
         </div>
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto">
           <h1 className="hero-title text-5xl md:text-7xl font-light text-white mb-6 tracking-tight">
-            Hi, I'm <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">Anjali</span>
+            Hi, I'm <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent text-center">ANJALI SHRIVASTAV</span>
           </h1>
-          <p className="hero-subtitle text-xl md:text-2xl text-gray-300 mb-8 font-light">
-            CSE (AI/ML) Student & Full-Stack Developer
-          </p>
+          <p className="hero-subtitle md:text-2xl text-gray-300 mb-8 font-light text-6xl">CSE (AI/ML) Student </p>
           <button className="hero-cta group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white font-medium overflow-hidden transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50">
             <span className="relative z-10">Hire Me</span>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -301,11 +267,7 @@ const Index = () => {
           <div className="about-image">
             <div className="relative w-80 h-80 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full blur-lg opacity-50"></div>
-              <img 
-                src="/lovable-uploads/ec2439d5-74c4-46ef-8729-7dda2630417c.png" 
-                alt="Anjali" 
-                className="relative z-10 w-full h-full object-cover rounded-full border-4 border-white/20"
-              />
+              <img src="/lovable-uploads/ec2439d5-74c4-46ef-8729-7dda2630417c.png" alt="Anjali" className="relative z-10 w-full h-full object-cover rounded-full border-4 border-white/20" />
             </div>
           </div>
           
@@ -318,14 +280,12 @@ const Index = () => {
             </p>
             
             <div className="skills-grid grid grid-cols-4 gap-4">
-              {['HTML5', 'CSS3', 'JavaScript', 'React', 'Python', 'AI/ML', 'GSAP', 'Node.js'].map((skill, index) => (
-                <div key={skill} className="skill-icon group">
+              {['HTML5', 'CSS3', 'JavaScript', 'React', 'Python', 'AI/ML', 'GSAP', 'Node.js'].map((skill, index) => <div key={skill} className="skill-icon group">
                   <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center border border-white/20 hover:border-cyan-400/50 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-cyan-400/20">
                     <div className="text-cyan-400 text-2xl mb-2">⚡</div>
                     <div className="text-white text-sm">{skill}</div>
                   </div>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
@@ -337,26 +297,19 @@ const Index = () => {
           <h2 className="text-4xl font-light text-white text-center mb-16">Featured Projects</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <div key={index} className="project-card group">
+            {projects.map((project, index) => <div key={index} className="project-card group">
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20 hover:border-cyan-400/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20">
                   <div className="aspect-video rounded-lg overflow-hidden mb-4 bg-gradient-to-br from-purple-500/20 to-cyan-500/20">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                   </div>
                   
                   <h3 className="text-white text-xl font-medium mb-2">{project.title}</h3>
                   <p className="text-gray-300 text-sm mb-4">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tech.map((tech) => (
-                      <span key={tech} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30">
+                    {project.tech.map(tech => <span key={tech} className="px-3 py-1 bg-cyan-500/20 text-cyan-300 text-xs rounded-full border border-cyan-500/30">
                         {tech}
-                      </span>
-                    ))}
+                      </span>)}
                   </div>
                   
                   <button className="flex items-center text-cyan-400 hover:text-white transition-colors">
@@ -364,8 +317,7 @@ const Index = () => {
                     View Project
                   </button>
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
@@ -378,27 +330,15 @@ const Index = () => {
             
             <form className="space-y-6">
               <div>
-                <input 
-                  type="text" 
-                  placeholder="Your Name" 
-                  className="w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all"
-                />
+                <input type="text" placeholder="Your Name" className="w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all" />
               </div>
               
               <div>
-                <input 
-                  type="email" 
-                  placeholder="Your Email" 
-                  className="w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all"
-                />
+                <input type="email" placeholder="Your Email" className="w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all" />
               </div>
               
               <div>
-                <textarea 
-                  rows={6} 
-                  placeholder="Your Message" 
-                  className="w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all resize-none"
-                ></textarea>
+                <textarea rows={6} placeholder="Your Message" className="w-full p-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-gray-400 focus:border-cyan-400 focus:outline-none focus:ring-2 focus:ring-cyan-400/50 transition-all resize-none"></textarea>
               </div>
               
               <button className="w-full py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-lg text-white font-medium hover:scale-105 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300">
@@ -453,8 +393,6 @@ const Index = () => {
           </div>
         </div>
       </footer>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
