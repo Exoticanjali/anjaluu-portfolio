@@ -3,11 +3,14 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import LocomotiveScroll from 'locomotive-scroll';
 import { Github, Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react';
+
 gsap.registerPlugin(ScrollTrigger);
+
 const Index = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const progressBarRef = useRef<HTMLDivElement>(null);
   const preloaderRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     // Initialize Locomotive Scroll
     const scroll = new LocomotiveScroll({
@@ -36,6 +39,7 @@ const Index = () => {
         initMainAnimations();
       }
     });
+
     const initMainAnimations = () => {
       // Hero animations
       gsap.fromTo(".hero-title", {
@@ -176,13 +180,15 @@ const Index = () => {
         }
       });
     };
+
     return () => {
       scroll.destroy();
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   }, []);
+
   const projects = [{
-    title: "AI Data Visualization",
+    title: "Food Delivery Website",
     description: "Interactive dashboard for machine learning model insights",
     tech: ["React", "D3.js", "Python"],
     image: "/lovable-uploads/89542fba-6a99-4e31-b896-1f221476d1e1.png"
@@ -212,6 +218,7 @@ const Index = () => {
     tech: ["React", "TypeScript", "SASS"],
     image: "/lovable-uploads/4bc0ed8a-dfdb-4afd-a2da-a323e865c883.png"
   }];
+
   return <div ref={scrollRef} data-scroll-container className="overflow-hidden">
       {/* Preloader */}
       <div ref={preloaderRef} className="fixed inset-0 z-50 bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex flex-col items-center justify-center">
@@ -395,4 +402,5 @@ const Index = () => {
       </footer>
     </div>;
 };
+
 export default Index;
