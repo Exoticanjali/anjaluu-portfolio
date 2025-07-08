@@ -1,3 +1,4 @@
+
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -365,12 +366,12 @@ const Index = () => {
               
               <div className="flex items-center text-gray-300">
                 <Phone className="w-5 h-5 mr-4 text-cyan-400" />
-                <span>+91 9876543210</span>
+                <span>+91 9876543210</span>
               </div>
               
               <div className="flex items-center text-gray-300">
                 <MapPin className="w-5 h-5 mr-4 text-cyan-400" />
-                <span>Kolkata | India</span>
+                <span>Kolkata | India</span>
               </div>
             </div>
             
@@ -390,7 +391,7 @@ const Index = () => {
       <footer className="py-12 px-6 bg-slate-900 border-t border-white/10">
         <div className="max-w-6xl mx-auto text-center">
           <div className="text-gray-400 mb-4">
-            © 2024 Anjali. Crafted with passion and powered by innovation.
+            © 2025 Anjali. Crafted with passion and powered by innovation.
           </div>
           <div className="flex justify-center space-x-8 text-sm text-gray-500">
             <a href="#home" className="hover:text-cyan-400 transition-colors">Home</a>
