@@ -353,17 +353,17 @@ const Index = () => {
             <div className="space-y-6">
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 mr-4 text-cyan-400" />
-                <span>anjali@example.com</span>
+                <span>shrivastav24anjali@gmail.com</span>
               </div>
               
               <div className="flex items-center text-gray-300">
                 <Phone className="w-5 h-5 mr-4 text-cyan-400" />
-                <span>+1 (555) 123-4567</span>
+                <span>+91 9876543210</span>
               </div>
               
               <div className="flex items-center text-gray-300">
                 <MapPin className="w-5 h-5 mr-4 text-cyan-400" />
-                <span>San Francisco, CA</span>
+                <span>Kolkata | India</span>
               </div>
             </div>
             
